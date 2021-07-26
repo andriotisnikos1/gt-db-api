@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from 'mongoose';
 import 'dotenv';
-import router from './routes/routes.js';
+import router from '../routes/products.js';
 const app = express();
 const PORT = app.listen(process.env.PORT || 5000);
 
