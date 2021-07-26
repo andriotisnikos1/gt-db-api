@@ -1,10 +1,11 @@
 import express from "express";
 import mongoose from 'mongoose';
-import 'dotenv';
-import products from './routes/products.js';
+import dotenv from'dotenv';
+import { products } from './routes/products.js';
 import './db-related/connection.js'
+dotenv.config()
 const app = express();
-const PORT = app.listen(process.env.PORT || 5001);
+app.listen(process.env.PORT)
 
 app.use('/', products)
 

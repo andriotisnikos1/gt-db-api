@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import {} from '../controllers/posts.js'
 const router = express.Router();
 
-router.get('/', (req, res) => {
+export const products = router.get('/', (req, res) => {
     res.status(200)
     .send('Success')
 })
