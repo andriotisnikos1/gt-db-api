@@ -1,6 +1,8 @@
 import { AppBar, Typography, Toolbar  } from "@material-ui/core";
 import useStyles from './styles'
 import image from '../images/icon.ico'
+import '../index.css'
+
 export const Header = () => {
     const classes = useStyles()
    return( 
@@ -10,4 +12,9 @@ export const Header = () => {
         </Toolbar>
     </AppBar>
     )
+}
+
+
+export const Dropdown = () => {
+
 }
