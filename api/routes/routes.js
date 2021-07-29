@@ -1,8 +1,8 @@
 import express from 'express';
-import {} from '../db-related/fetchData.js'
+import { getData } from '../db-related/fetchData.js'
 const router = express.Router();
 
-
+router.get('/', getData)
 
 
 export default router;

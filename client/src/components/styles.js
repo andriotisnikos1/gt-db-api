@@ -4,13 +4,17 @@ export default makeStyles(() => ({
     ico: {
         width: 31,
         height: 38,
-        justifyContent: 'center'
-        
+        justifyContent: 'center',
+        paddingRight: '1250px'
     },
 
     appbar: {
         height: 75,
         backgroundColor: '#fff',
+    },
+
+    tbBtnStyles:{
+        marginRight: '10px'
     }
 }));
 
