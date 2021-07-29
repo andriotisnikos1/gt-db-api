@@ -1,13 +1,15 @@
-const reducers =  (state = [], action) => {
+import { CREATE, UPDATE, DELETE, FETCH_ALL } from '../constants/actionTypes'
+
+const reducers =  (items = [], action) => {
     switch (action.type) {
-        case 'FETCH_ALL':
-           return state; 
-        case 'CREATE':
-            return state;
+        case FETCH_ALL:
+           return action.payload 
+        case CREATE:
+            return
         case 'UPDATE':
-            return state;
+            return 
         default:
-            return state;
+            return 
     }
 }
 

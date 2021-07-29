@@ -1,11 +1,11 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export default makeStyles(() => ({
+export default makeStyles((theme) => ({
     ico: {
         width: 31,
         height: 38,
-        justifyContent: 'center'
-        
+        justifyContent: 'center',
+        paddingRight: '1250px'
     },
 
     appbar: {
@@ -13,10 +13,9 @@ export default makeStyles(() => ({
         backgroundColor: '#fff',
     },
 
-    dropdownStyles: {
-        
+    tbBtnStyles:{
+        marginRight: '10px'
     }
-
 
 }));
 
