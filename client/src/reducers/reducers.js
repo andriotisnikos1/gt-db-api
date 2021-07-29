@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 const reducers =  (items = [], action) => {
@@ -7,6 +8,14 @@ const reducers =  (items = [], action) => {
            return action;
         case 'CREATE':
             return action;
+=======
+const reducers =  (state = [], action) => {
+    switch (action.type) {
+        case 'FETCH_ALL':
+           return state; 
+        case 'CREATE':
+            return state;
+>>>>>>> parent of 8334742 (z)
 =======
 const reducers =  (state = [], action) => {
     switch (action.type) {
