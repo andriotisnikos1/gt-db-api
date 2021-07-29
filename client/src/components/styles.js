@@ -11,16 +11,6 @@ export default makeStyles(() => ({
     appbar: {
         height: 75,
         backgroundColor: '#fff',
-<<<<<<< HEAD
     }
-=======
-    },
-
-    dropdownStyles: {
-        
-    }
-
-
->>>>>>> parent of 8334742 (z)
 }));
 
