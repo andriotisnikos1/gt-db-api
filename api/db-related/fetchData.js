@@ -3,18 +3,13 @@ import mongoose from 'mongoose';
 import newProductSchema from '../models-schemas/newProduct.js';
 const app = express();
 const db = mongoose.connection;
-var a = [
-    1,2
-]
 
-var b = []
-export const getData = app.get('/', async(req, res) => {
+export const getData = app.get('/:_id', async(req, res) => {
+
+    const id = req.params._id.v;
     try {
-            await a.forEach(async id => {
-            const products = await db.useDb('main').collection('products').findOne({_id: id})
-            b.push(products)    
-        })
-        res.send(b)
+            const products = await db.useDb('main').collection('products').findOne({"id": 1})
+            res.send(products)
         
     } catch (err) {
         console.log(err)
