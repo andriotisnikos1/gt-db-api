@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const newProduct = new mongoose.Schema({
     name: String,
-    id: Number,
+    id: String,
     availability: {
         type: Number,
         default: 0
