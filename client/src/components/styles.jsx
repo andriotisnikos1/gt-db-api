@@ -15,6 +15,14 @@ export default makeStyles(() => ({
 
     tbBtnStyles:{
         marginRight: '10px'
+    },
+
+    form: {
+        
+    },
+
+    formPaper:{
+        
     }
 }));
 
