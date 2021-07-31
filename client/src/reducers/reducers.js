@@ -1,10 +1,13 @@
+import { FETCH_ALL, CREATE, UPDATE, DELETE} from '../constants/actionTypes.js'
 const reducers =  (state = [], action) => {
     switch (action.type) {
-        case 'FETCH_ALL':
+        case FETCH_ALL:
            return state; 
-        case 'CREATE':
+        case CREATE:
             return state;
-        case 'UPDATE':
+        case UPDATE:
+            return state;
+        case DELETE:
             return state;
         default:
             return state;
