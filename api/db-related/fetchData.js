@@ -6,10 +6,11 @@ const db = mongoose.connection;
 
 export const getData = app.get('/:_id', async(req, res) => {
 
-    const id = req.params._id.v;
+    const id = req.params
     try {
-            const products = await db.useDb('main').collection('products').findOne({"id": 1})
+            const products = await db.useDb('main').collection('products').findOne(id)
             res.send(products)
+            
         
     } catch (err) {
         console.log(err)
