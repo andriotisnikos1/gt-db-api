@@ -1,9 +1,9 @@
 import express from 'express';
-import { getData } from '../db-related/fetchData.js'
+import { getData, updateData} from '../db-related/fetchData.js'
 const router = express.Router();
 
 router.get('/:id', getData)
-router.post('/:id/:quantity')
+router.patch('/:id/:quantity', updateData)
 
 
 export default router;
