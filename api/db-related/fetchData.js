@@ -24,7 +24,7 @@ export const updateData = app.patch('/:_id/:quantity', async(req, res) => {
     const quantity = Number(req.params.quantity)
 
     try {
-            await db.useDb('main').collection('products').updateOne({_id: id},{quantity: quantity})
+            await db.useDb('main').collection('products').updateOne({_id: id})
         res.send('success').status(200)
         
     } catch (err) {
