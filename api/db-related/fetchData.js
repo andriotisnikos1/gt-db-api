@@ -6,9 +6,9 @@ const db = mongoose.connection;
 
 export const getData = app.get('/:_id', async(req, res) => {
 
-    const id = req.params
+    const id = Number(req.params._id)
     try {
-            const products = await db.useDb('main').collection('products').findOne(id)
+            const products = await db.useDb('main').collection('products').findOne({_id: id})
             res.send(products)
             
         
