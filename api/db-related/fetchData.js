@@ -1,7 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import newProductSchema from '../models-schemas/newProduct.js';
-import { newId } from './custom-scripts.js';
 const app = express();
 const db = mongoose.connection;
 export const dtb = db.useDb('main').collection('products')
@@ -65,7 +64,7 @@ export const newItem = app.post('/:_id/:quantity/:name', async(req,res) => {
     const name = req.params.name;
 
     try {
-        await dtb.insertOne({_id: id, quantity: quantity, name: name})
+        await dtb.insertOne({_id: id, quantity: quantity, name: name, fetch: "true"})
         res.send('success')
     } catch (err) {
         console.log(err);

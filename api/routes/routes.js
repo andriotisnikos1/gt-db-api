@@ -1,6 +1,5 @@
 import express from 'express';
 import { getData, updateDataAdd, updateDataRemove, dtb, newItem} from '../db-related/fetchData.js'
-import { newId } from '../db-related/custom-scripts.js';
 const router = express.Router();
 
 router.get('/:id', getData)
