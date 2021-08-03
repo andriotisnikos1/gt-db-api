@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "doppler run -- nodemon .",
-    "a": "npm test"
+    "a": "npm test",
+    "start": "node ."
   },
   "keywords": [],
   "author": "",
