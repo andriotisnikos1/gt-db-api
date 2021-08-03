@@ -15,7 +15,7 @@ export const getData = app.get('/:_id', async(req, res) => {
 
     } catch (err) {
         console.log(err)
-        res.sendStatus(500)
+        res.send(`document with id of ${id} does not exist`).status(404)
     }
 })
     
@@ -34,7 +34,7 @@ export const updateDataAdd = app.patch('/:_id/:quantity/true', async(req, res) =
         
     } catch (err) {
         console.log(err);
-        res.sendStatus(500)
+        res.send(`document with id of ${id} does not exist`).status(404)
     }
 })
 
@@ -53,7 +53,7 @@ export const updateDataRemove = app.patch('/:_id/:quantity/false', async(req, re
         
     } catch (err) {
         console.log(err);
-        res.sendStatus(500)
+        res.send(`document with id of ${id} does not exist`).status(404)
     }
 })
 
@@ -68,8 +68,35 @@ export const newItem = app.post('/:_id/:quantity/:name', async(req,res) => {
         res.send('success')
     } catch (err) {
         console.log(err);
-        res.send(`item with id of ${id} already exists`)
+        res.send(`item with id of ${id} already exists`).status(403)
     }
 
+
+})
+
+export const getAll = app.get('/all/true', async(req, res) => {
+
+    try {
+        const products = await dtb.find({}).toArray().catch(console.error())
+
+    res.send(products)
+    } catch (err) {
+        console.log(err);
+        res.sendStatus(500)
+    }
+
+
+})
+
+export const deleteItem = app.delete('/:_id', async(req, res) => {
+
+    const id = Number(req.params._id)
+    try {
+        await dtb.deleteOne({_id: id})
+        res.send('success').status(200)
+    } catch (err) {
+        console.log(err);
+        res.send(`couldnt delete file with id of ${id}` ).status(500)
+    }
 
 })
