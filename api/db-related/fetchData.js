@@ -4,6 +4,7 @@ import newProductSchema from '../models-schemas/newProduct.js';
 import { newId } from './custom-scripts.js';
 const app = express();
 const db = mongoose.connection;
+export const dtb = db.useDb('main').collection('products')
 
 export const getData = app.get('/:_id', async(req, res) => {
 
@@ -57,21 +58,19 @@ export const updateDataRemove = app.patch('/:_id/:quantity/false', async(req, re
     }
 })
 
-export const newItem = () => app.post('/:quantity/:name', async(req, res) => {
-    const quantity = Number(req.params.quantity)
+
+export const newItem = app.post('/:_id/:quantity/:name', async(req,res) => {
+    const id = Number(req.params._id)
+    const quantity = Number(req.params.quantity);
     const name = req.params.name;
 
     try {
-        
-            let product = await db.useDb('main').collection('products').insert({
-                _id: 0,
-                name: "le",
-                quantity: 5
-            },)
-            res.send('success').status(200)
-            
+        await dtb.insertOne({_id: id, quantity: quantity, name: name})
+        res.send('success')
     } catch (err) {
         console.log(err);
-        res.sendStatus(500)
+        res.send(`item with id of ${id} already exists`)
     }
+
+
 })

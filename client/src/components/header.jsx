@@ -6,7 +6,7 @@ export const Header = () => {
    return( 
     <AppBar className={classes.appbar}>
         <Toolbar>
-        <img src={image} alt="gt icon" className={classes.ico} />
+        <img src={image} alt="gt icon" className={classes.ico}/>
         <Buttons />
         </Toolbar>
     </AppBar>
@@ -16,7 +16,6 @@ export const Header = () => {
 
 export const Buttons = () => {
     const classes = useStyles()
-
     return(
         <div>
               

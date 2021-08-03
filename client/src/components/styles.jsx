@@ -5,7 +5,7 @@ export default makeStyles(() => ({
         width: 31,
         height: 38,
         justifyContent: 'center',
-        paddingRight: '1250px'
+        paddingRight: 'calc(100% - 630px)'
     },
 
     appbar: {
