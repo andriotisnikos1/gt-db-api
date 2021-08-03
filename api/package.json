@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "nodemon ."
+    "test": "doppler run -- nodemon .",
+    "a": "npm test"
   },
   "keywords": [],
   "author": "",
