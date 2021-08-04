@@ -66,5 +66,9 @@ export const createItem = async(i, q, nam) => {
 
 export const deleteItem = async(i) => {
     const id = Number(i)
-    await axios.delete(`${url}/${id}`)
+    try {
+    await axios.delete(`${url}/${id}`) 
+    } catch (error) {
+        console.log(error);
+    }
 }
