@@ -17,7 +17,8 @@ export default makeStyles(() => ({
         marginRight: '10px'
     },
 
-    form: {
+    delForm: {
+        display: "none"
         
     },
 
