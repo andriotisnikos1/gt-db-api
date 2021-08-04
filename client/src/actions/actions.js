@@ -1,14 +1,14 @@
 import * as api from '../client-api/api'
-import { CREATE, UPDATE, DELETE, FETCH_ALL, FETCH } from '../constants/actionTypes'
+import { CREATE, UPDATE, DELETE, FETCH_ALL } from '../constants/actionTypes'
 import { useDispatch } from 'react-redux'
 const dispatch = useDispatch() 
 
 export const fetchItems = (id) => async() => {
 
         try {
-            const { data }  = await api.getItem(id)
+            const { data }  = await api.getItems(id)
 
-            dispatch({type: FETCH, payload: data })
+            dispatch({type: FETCH_ALL, payload: data })
             console.log(data)
         } catch (error) {
             console.log(error)
@@ -17,27 +17,12 @@ export const fetchItems = (id) => async() => {
 
 }
 
-
-export const fetchAll = () => {
-    const {data} = await api.getAll()
-    .catch(console.error())
-    dispatch({type: FETCH_ALL, payload: data})
+export const updateItems = async(id, quantity) => {
+    try {
+        await api.editItem(id, quantity)
+        dispatch({type: UPDATE})
+        console.log('success');
+    } catch (err) {
+        console.log(err);
+    }
 }
-
-export const updateQuantityRemove = async(id, quantity) => {
-    await api.updateQuantityRemove(id, quantity)
-    .catch(console.error())
-    dispatch({type: UPDATE})
-    location.reload()
-}
-
-
-export const updateQuantityAdd = async(id, quantity) => {
-    await api.updateQuantityAdd(id, quantity)
-    .catch(console.error())
-    dispatch({type: UPDATE})
-    location.reload()
-}
-
-//TODO: REST OF FUNCTIONS
-
