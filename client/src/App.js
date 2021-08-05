@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles'
 import { Header } from './components/header.jsx'
 import { DeliveryForm } from './components/new-delivery.jsx'
-import { Container, Grid,Grow } from '@material-ui/core'
+import { Container, Grid,Grow, AppBar,Paper } from '@material-ui/core'
 import useStyles from './components/styles'
         
 
@@ -13,17 +13,16 @@ import useStyles from './components/styles'
     const classes = useStyles()
 
     return (
-        <div>
-        <Header/>
-            <Grow in>
-                <Container>
-                    <Grid sm={4} xs={12} className={classes.delForm}>
-                        <DeliveryForm/>
-                    </Grid>
-                </Container>    
-            </Grow>
-        </div>
-        
+    <Container>
+            <Header/>
+        <Grow in>
+        <Grid container alignItems="center">
+            <div>
+                <p>le wat ?</p>
+            </div>
+            </Grid>
+        </Grow>
+    </Container>
 
     )
 }

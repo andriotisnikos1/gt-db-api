@@ -19,7 +19,7 @@ export const DeliveryForm = () => {
         const id = formData._id
         const quantity = formData.quantity
 
-        await api.updateQuantityRemove(id,quantity)
+        await api.updateQuantityRemove(id, quantity)
     }
 
     return(
@@ -28,7 +28,7 @@ export const DeliveryForm = () => {
                 <Typography variant="h6">Παραλαβή στην Αποθήκη</Typography>
                 <TextField name="id" variant="outlined" fullWidth={formData._id} label={"Κωδικός Προιόντος"}/>
                 <TextField name="id" variant="outlined" fullWidth={formData.quantity} label={"Ποσότητα Που Παραλήφθηκε"}/>
-                <Button fullWidth variant="contained" color="default" size="large" type="submit"></Button>
+                <Button fullWidth variant="contained" color="default" size="large" type="submit">ΕΝΗΜΕΡΩΣΗ ΠΡΟΙΟΝΤΩΝ</Button>
             </form>
         </Paper>
     )
