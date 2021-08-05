@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export default makeStyles(() => ({
+export default makeStyles((theme) => ({
     ico: {
         width: 31,
         height: 38,
@@ -24,6 +24,11 @@ export default makeStyles(() => ({
 
     formPaper:{
         
+    },
+
+    appbarfix: {
+        height: 80,
+        width: '100%'
     }
 }));
 
