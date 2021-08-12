@@ -17,18 +17,40 @@ export default makeStyles((theme) => ({
         marginRight: '10px'
     },
 
-    delForm: {
-        display: "none"
-        
-    },
-
-    formPaper:{
-        
-    },
 
     appbarfix: {
         height: 80,
         width: '100%'
-    }
+    },
+
+    //Delivery form
+
+    delform: {
+        display: "none",
+    },
+
+    form: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+      },
+
+    rootForm: {
+        '& .MuiTextField-root': {
+          margin: theme.spacing(1),
+        },
+      },
+
+    formPaper: {
+        padding: theme.spacing(2),
+        width:'50%'
+      },
+
+    buttonSubmit: {
+        marginBottom: 10,
+        marginLeft:5,
+        marginRight:5
+      }
+      
 }));
 

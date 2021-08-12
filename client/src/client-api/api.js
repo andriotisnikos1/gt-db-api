@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 
-const url = process.env.CONNECTION_URL
+const url = process.env.REACT_APP_CONNECTION_URL
 
 export const getItem = async(i) => {
     const id = Number(i)

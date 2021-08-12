@@ -18,7 +18,15 @@ import useStyles from './components/styles'
     <div>
             <Header/>
             <div className={classes.appbarfix}/>
-            <p>le wat ?</p>
+                    <Grow in>
+                        <Container>
+                               <Grid container justifyContent="space-between" alignItems="stretch" spacing={1}>
+                                       <Grid item sm={7} xs={12}>
+                                               <DeliveryForm/>
+                                       </Grid>
+                               </Grid>
+                        </Container>
+                    </Grow>      
     </div>
 
     )
