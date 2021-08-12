@@ -1,17 +1,25 @@
-import { Paper, Typography, TextField, Button, Container  } from "@material-ui/core";
+import { Paper, Typography, TextField, Button, Container, Grow, Grid  } from "@material-ui/core";
 import React, {useState} from "react";
 import { useDispatch } from 'react-redux'
 import useStyles from './styles.jsx'
 import * as api from "../actions/actions.js";
-
-export const DeliveryForm = () => {
+export const DeliveryForm = (props) => {
     const classes = useStyles()
     const dispatch = useDispatch()
+    var [show, setShow] = useState(false)
     const [formData, setFormData] = useState({
         _id: '',
         quantity: '',
 
     })
+     
+
+
+
+
+    if (!props.show) {
+      return null
+    }
 
     const handlesubmit = async(e) => {
         e.preventDefault()
@@ -19,12 +27,23 @@ export const DeliveryForm = () => {
         const id = formData._id
         const quantity = formData.quantity
 
-        await api.updateQuantityRemove(id, quantity)
+        try { 
+          await api.updateQuantityRemove(id, quantity)
+        } catch (error) {
+          Notification('Υπήρξε πράβλημα στην βάση δεδομένων')
+        }
     }
 
     return(
         
-        <Paper className={classes.paper}>
+        
+
+<Grow in >
+<Container className={`delform`}>
+    <Grid container justifyContent="space-between" alignItems="stretch" spacing={1}>
+            <Grid item sm={7} xs={12}>
+
+            <Paper className={classes.paper}>
       <form autoComplete="off" noValidate className={`${classes.rootForm} ${classes.form}`} onSubmit={handlesubmit}>
         <Typography variant="h6"></Typography>
         <TextField name="creator" variant="outlined" label="ΚΩΔΙΚΟΣ ΠΡΩΙΟΝΤΟΣ" fullWidth value={formData._id} onChange={(e) => setFormData({... formData, _id: e.target.value})}/>
@@ -32,6 +51,11 @@ export const DeliveryForm = () => {
         <Button className={classes.buttonSubmit} variant="contained" color="default" size="large" type="submit" fullWidth>Submit</Button>
       </form>
     </Paper>
+
+            </Grid>
+    </Grid>
+</Container>    
+</Grow>
   );
         
         
