@@ -8,7 +8,8 @@ import './components/styles.css'
 import image from './images/icon.ico'
 import * as cs from './components/custom-scripts'
 import { SynergeioForm } from './components/new-order.jsx'
-
+import { NewItem } from './components/new-product.jsx'
+import { AllProducts } from './components/all-products'
 
 
 
@@ -17,6 +18,7 @@ import { SynergeioForm } from './components/new-order.jsx'
     const classes = useStyles()
     const [showDel, setShowDel] = useState(false)
     const [showSyn, setShowSyn] = useState(false)
+    const [showNew, setShowNew] = useState(false)
     return (
     <div>
             <AppBar className={classes.appbar}>
@@ -26,7 +28,7 @@ import { SynergeioForm } from './components/new-order.jsx'
               
              <Button variant="contained" color="primary" className={classes.tbBtnStyles} onClick={() => setShowDel(cs.newState(showDel))} disableElevation>ΝΕΑ ΠΑΡΑΛΑΒΗ</Button>
              <Button variant="contained" color="secondary" className={classes.tbBtnStyles} onClick={() => setShowSyn(cs.newState(showSyn))} disableElevation>ΝΕΟ ΣΥΝΕΡΓΕΙΟ</Button>
-             <Button variant="contained" color="secondary" className={classes.tbBtnStyles} onClick={() => setShowDel(cs.newState(showDel))} disableElevation>ΣΥΝΕΡΓΕΙΟ Κ</Button>
+             <Button variant="contained" color="secondary" className={classes.tbBtnStyles} onClick={() => setShowNew(cs.newState(showNew))} disableElevation>ΝΕΟ ΠΡΟΙΟΝ</Button>
              <Button variant="outlined" className={classes.tbBtnStyles} disabled>Coming Soon</Button>
         </div>
         </Toolbar>
@@ -34,6 +36,7 @@ import { SynergeioForm } from './components/new-order.jsx'
             <div className={classes.appbarfix}/>
             <DeliveryForm show={showDel}/>
             <SynergeioForm show={showSyn}/>
+            <NewItem show={showNew} />
                                 
     </div>
 

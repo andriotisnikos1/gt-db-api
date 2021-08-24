@@ -29,6 +29,11 @@ export const SynergeioForm = (props) => {
 
         try { 
           await api.updateQuantityRemove(id, quantity)
+          setFormData({
+            _id: '',
+            quantity: '',
+            code: ''
+          })
         } catch (error) {
           Notification('Υπήρξε πράβλημα στην βάση δεδομένων')
         }
@@ -48,7 +53,7 @@ export const SynergeioForm = (props) => {
         <Typography variant="h6">ΝΕΟ ΣΥΝΕΡΓΕΙΟ</Typography>
         <TextField name="id" variant="outlined" label="ΚΩΔΙΚΟΣ ΠΡΩΙΟΝΤΟΣ" fullWidth value={formData._id} onChange={(e) => setFormData({... formData, _id: e.target.value})}/>
         <TextField name="Quantity" variant="outlined" label="ΠΟΣΟΤΗΤΑ" fullWidth value={formData.quantity} onChange={(e) => setFormData({... formData, quantity: e.target.value})}/>
-        <TextField name="code" variant="outlined" label="ΚΩΔΙΚΟΣ ΣΥΝΕΡΓΕΙΟΥ" fullWidth value={formData.quantity} onChange={(e) => setFormData({... formData, code: e.target.value})}/>
+        <TextField name="code" variant="outlined" label="ΚΩΔΙΚΟΣ ΣΥΝΕΡΓΕΙΟΥ" fullWidth value={formData.code} onChange={(e) => setFormData({... formData, code: e.target.value})}/>
         <Button className={classes.buttonSubmit} variant="contained" color="default" size="large" type="submit" fullWidth>Submit</Button>
       </form>
     </Paper>

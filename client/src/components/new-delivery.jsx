@@ -28,6 +28,10 @@ export const DeliveryForm = (props) => {
 
         try { 
           await api.updateQuantityAdd(id, quantity)
+          setFormData({
+            _id: '',
+            quantity: ''
+          })
         } catch (error) {
           Notification('Υπήρξε πράβλημα στην βάση δεδομένων')
         }
