@@ -6,7 +6,6 @@ import * as api from "../actions/actions.js";
 export const DeliveryForm = (props) => {
     const classes = useStyles()
     const dispatch = useDispatch()
-    var [show, setShow] = useState(false)
     const [formData, setFormData] = useState({
         _id: '',
         quantity: '',
@@ -28,7 +27,7 @@ export const DeliveryForm = (props) => {
         const quantity = formData.quantity
 
         try { 
-          await api.updateQuantityRemove(id, quantity)
+          await api.updateQuantityAdd(id, quantity)
         } catch (error) {
           Notification('Υπήρξε πράβλημα στην βάση δεδομένων')
         }
@@ -45,7 +44,7 @@ export const DeliveryForm = (props) => {
 
             <Paper className={classes.paper}>
       <form autoComplete="off" noValidate className={`${classes.rootForm} ${classes.form}`} onSubmit={handlesubmit}>
-        <Typography variant="h6"></Typography>
+        <Typography variant="h6">ΝΕΑ ΠΑΡΑΛΑΒΗ</Typography>
         <TextField name="creator" variant="outlined" label="ΚΩΔΙΚΟΣ ΠΡΩΙΟΝΤΟΣ" fullWidth value={formData._id} onChange={(e) => setFormData({... formData, _id: e.target.value})}/>
         <TextField name="title" variant="outlined" label="ΠΟΣΟΤΗΤΑ" fullWidth value={formData.quantity} onChange={(e) => setFormData({... formData, quantity: e.target.value})}/>
         <Button className={classes.buttonSubmit} variant="contained" color="default" size="large" type="submit" fullWidth>Submit</Button>

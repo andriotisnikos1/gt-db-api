@@ -6,7 +6,7 @@ import { Container, Grid,Grow, AppBar,Paper, Toolbar, Button } from '@material-u
 import useStyles from './components/styles'
 import './components/styles.css'
 import image from './images/icon.ico'
-import {Header} from './components/header' 
+import * as cs from './components/custom-scripts'
 
 
 
@@ -14,12 +14,23 @@ import {Header} from './components/header'
         const App = (props) => {
     const dispatch = useDispatch()
     const classes = useStyles()
-    const [show, setShow] = useState(false)
+    const [showDel, setShowDel] = useState(false)
     return (
     <div>
-            <Header/>
+            <AppBar className={classes.appbar}>
+        <Toolbar>
+        <img src={image} alt="gt icon" className={classes.ico}/>
+        <div>
+              
+             <Button variant="contained" color="primary" className={classes.tbBtnStyles} onClick={() => setShowDel(cs.newState(showDel))} disableElevation>ΝΕΑ ΠΑΡΑΛΑΒΗ</Button>
+             <Button variant="contained" color="secondary" className={classes.tbBtnStyles} onClick={() => setShowDel(cs.newState(showDel))} disableElevation>ΣΥΝΕΡΓΕΙΟ Α</Button>
+             <Button variant="contained" color="secondary" className={classes.tbBtnStyles} onClick={() => setShowDel(cs.newState(showDel))} disableElevation>ΣΥΝΕΡΓΕΙΟ Κ</Button>
+             <Button variant="outlined" className={classes.tbBtnStyles} disabled>Coming Soon</Button>
+        </div>
+        </Toolbar>
+        </AppBar>
             <div className={classes.appbarfix}/>
-            <DeliveryForm show={show}/>                    
+            <DeliveryForm show={showDel}/>                    
     </div>
 
     )
