@@ -47,7 +47,7 @@ export const DeliveryForm = (props) => {
         <Typography variant="h6">ΝΕΑ ΠΑΡΑΛΑΒΗ</Typography>
         <TextField name="creator" variant="outlined" label="ΚΩΔΙΚΟΣ ΠΡΩΙΟΝΤΟΣ" fullWidth value={formData._id} onChange={(e) => setFormData({... formData, _id: e.target.value})}/>
         <TextField name="title" variant="outlined" label="ΠΟΣΟΤΗΤΑ" fullWidth value={formData.quantity} onChange={(e) => setFormData({... formData, quantity: e.target.value})}/>
-        <Button className={classes.buttonSubmit} variant="contained" color="default" size="large" type="submit" fullWidth>Submit</Button>
+        <Button className={classes.buttonSubmit} variant="contained" color="default" size="large" type="submit" fullWidth>Submit</Button> 
       </form>
     </Paper>
 
