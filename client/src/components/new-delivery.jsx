@@ -38,7 +38,7 @@ export const DeliveryForm = (props) => {
         
 
 <Grow in >
-<Container className={`delform`}>
+<Container>
     <Grid container justifyContent="space-between" alignItems="stretch" spacing={1}>
             <Grid item sm={7} xs={12}>
 
