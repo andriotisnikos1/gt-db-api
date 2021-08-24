@@ -9,11 +9,12 @@ import image from './images/icon.ico'
 import * as cs from './components/custom-scripts'
 import { SynergeioForm } from './components/new-order.jsx'
 import { NewItem } from './components/new-product.jsx'
-import { AllProducts } from './components/all-products'
+import { test } from './components/all-products'
 
 
 
         const App = (props) => {
+            test()
     const dispatch = useDispatch()
     const classes = useStyles()
     const [showDel, setShowDel] = useState(false)
