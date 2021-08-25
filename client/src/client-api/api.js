@@ -26,7 +26,7 @@ export const editItem = async(i, q) => {
 }
 
 export const getAll = async() => {
-    await axios.get(`${url}/all/true`)
+   const a = await axios.get(`${url}/all/true`)
 }
 
 export const updateQuantityAdd = async(i, q) => {

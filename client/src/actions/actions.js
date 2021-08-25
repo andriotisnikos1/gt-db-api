@@ -1,29 +1,25 @@
 import * as api from '../client-api/api'
 import { useDispatch } from 'react-redux'
 import * as cn from '../constants/actionTypes'
-export const fetchItem = (id) => async() => {
-    
-
-
+export const fetchItem = (id) => async(dispatch) => {
         try {
             const { data }  = await api.getItem(id)
             console.log(data)
         } catch (error) {
             console.log(error)
         }
-
-
 }
 
 
-export const getAll = () => async(dispatch) => {
+export const getAll = () => async (dispatch) => {
     try {
-        const {data} = await api.getAll()
-        dispatch({type: cn.FETCH_ALL, payload: data})
+      const { data } = await api.getAll;
+  
+      dispatch({ type: cn.FETCH_ALL , payload: data });
     } catch (error) {
-        console.log(error);
+      console.log(error.message);
     }
-}
+  };
 
 export const updateQuantityRemove = async(id, quantity) => {
     await api.updateQuantityRemove(id, quantity)
