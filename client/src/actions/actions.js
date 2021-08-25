@@ -1,4 +1,6 @@
 import * as api from '../client-api/api'
+import { useDispatch } from 'react-redux'
+import * as cn from '../constants/actionTypes'
 export const fetchItem = (id) => async() => {
     
 
@@ -14,10 +16,13 @@ export const fetchItem = (id) => async() => {
 }
 
 
-export const fetchAll = async() => {
-    const {data} = await api.getAll()
-    .catch(console.error())
-    console.log(data);
+export const getAll = () => async(dispatch) => {
+    try {
+        const {data} = await api.getAll()
+        dispatch({type: cn.FETCH_ALL, payload: data})
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 export const updateQuantityRemove = async(id, quantity) => {

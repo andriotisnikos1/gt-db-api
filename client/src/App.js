@@ -10,13 +10,16 @@ import * as cs from './components/custom-scripts'
 import { SynergeioForm } from './components/new-order.jsx'
 import { NewItem } from './components/new-product.jsx'
 import { test } from './components/all-products'
+import { getAll } from './actions/actions.js'
 
 
 
         const App = (props) => {
-            test()
     const dispatch = useDispatch()
     const classes = useStyles()
+    useEffect(() =>{
+        dispatch(getAll())
+    },[dispatch])
     const [showDel, setShowDel] = useState(false)
     const [showSyn, setShowSyn] = useState(false)
     const [showNew, setShowNew] = useState(false)

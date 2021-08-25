@@ -26,11 +26,7 @@ export const editItem = async(i, q) => {
 }
 
 export const getAll = async() => {
-    try {
-        await axios.get(`${url}/all/true`)
-    } catch (error) {
-        console.log(error);
-    }
+    await axios.get(`${url}/all/true`)
 }
 
 export const updateQuantityAdd = async(i, q) => {

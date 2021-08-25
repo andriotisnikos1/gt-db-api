@@ -6,7 +6,7 @@ import * as api from "../actions/actions.js";
 
     export const test = async() => {
         try {
-            const products = await api.fetchAll()
+            const products = await api.getAll()
             return console.log(products)
         } catch (error) {
             console.log(error);
