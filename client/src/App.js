@@ -9,7 +9,6 @@ import image from './images/icon.ico'
 import * as cs from './components/custom-scripts'
 import { SynergeioForm } from './components/new-order.jsx'
 import { NewItem } from './components/new-product.jsx'
-import { test } from './components/all-products'
 import { getAll } from './actions/actions.js'
 
 
@@ -17,8 +16,9 @@ import { getAll } from './actions/actions.js'
         const App = (props) => {
     const dispatch = useDispatch()
     const classes = useStyles()
-        getAll()
-    
+    useEffect(() =>{
+        dispatch(getAll())
+    },[dispatch])
     const [showDel, setShowDel] = useState(false)
     const [showSyn, setShowSyn] = useState(false)
     const [showNew, setShowNew] = useState(false)
@@ -40,6 +40,7 @@ import { getAll } from './actions/actions.js'
             <DeliveryForm show={showDel}/>
             <SynergeioForm show={showSyn}/>
             <NewItem show={showNew} />
+            
                                 
     </div>
 

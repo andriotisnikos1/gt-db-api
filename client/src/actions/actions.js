@@ -11,11 +11,11 @@ export const fetchItem = (id) => async(dispatch) => {
 }
 
 
-export const getAll = async() => {
+export const getAll = () => async(dispatch) => {
     try {
       const { data } = await api.getAll();
       console.log(data)
-  
+        dispatch({type: cn.FETCH_ALL, payload: data})
       return data
     } catch (error) {
       console.log(error.message);

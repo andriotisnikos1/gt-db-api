@@ -2,7 +2,7 @@ import { FETCH_ALL, CREATE, UPDATE, DELETE} from '../constants/actionTypes.js'
 export default (state = [], action) => {
     switch (action.type) {
         case FETCH_ALL:
-           return null
+           return action.payload
         case CREATE:
             return state;
         case UPDATE:
