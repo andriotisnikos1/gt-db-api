@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import useStyles from './products-styles'
 import Product from './product/product'
 const Products = () => {
-    const products = useSelector((state) => state.state)
+    const products = useSelector((state) => state.products)
     const classes = useStyles()
 
     return (
@@ -21,3 +21,4 @@ const Products = () => {
         )
     )
 }
+export default Products 

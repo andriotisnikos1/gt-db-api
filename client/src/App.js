@@ -13,6 +13,7 @@ import { getAll } from './actions/actions.js'
 
 
 
+
         const App = (props) => {
     const dispatch = useDispatch()
     const classes = useStyles()
@@ -40,6 +41,8 @@ import { getAll } from './actions/actions.js'
             <DeliveryForm show={showDel}/>
             <SynergeioForm show={showSyn}/>
             <NewItem show={showNew} />
+            <div height="1px"/>
+            
             
                                 
     </div>
