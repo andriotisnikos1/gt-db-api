@@ -5,7 +5,6 @@ import useStyles from './styles.jsx'
 import * as api from "../actions/actions.js";
 export const DeliveryForm = (props) => {
     const classes = useStyles()
-    const dispatch = useDispatch()
     const [formData, setFormData] = useState({
         _id: '',
         quantity: '',

@@ -1,5 +1,4 @@
 import * as api from '../client-api/api'
-import { useDispatch } from 'react-redux'
 import * as cn from '../constants/actionTypes'
 export const fetchItem = (id) => async(dispatch) => {
         try {
