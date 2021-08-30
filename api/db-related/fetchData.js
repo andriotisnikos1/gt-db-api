@@ -64,7 +64,7 @@ export const newItem = app.post('/:_id/:quantity/:name', async(req,res) => {
     const name = req.params.name;
 
     try {
-        await dtb.insertOne({_id: id, quantity: quantity, name: name, fetch: "true"})
+        await dtb.insertOne({_id: id, quantity: quantity, name: name})
         res.send('success')
     } catch (err) {
         console.log(err);
