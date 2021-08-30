@@ -35,8 +35,9 @@ export const NewItem = (props) => {
             quantity: '',
             title: ''
           })
+          window.location.reload()
         } catch (error) {
-          Notification('Υπήρξε πράβλημα στην βάση δεδομένων')
+          alert('Υπήρξε πράβλημα στην βάση δεδομένων')
         }
     }
 
@@ -52,8 +53,8 @@ export const NewItem = (props) => {
             <Paper className={classes.paper}>
       <form autoComplete="off" noValidate className={`${classes.rootForm} ${classes.form}`} onSubmit={handlesubmit}>
         <Typography variant="h6">ΝΕΟ ΠΡΟΙΟΝ</Typography>
-        <TextField name="title" variant="outlined" label="ΟΝΟΜΑ ΠΡΟΙΟΝΤΟΣ (ΑΝΤΙΚΑΤΑΣΤΗΣΤΕ ΚΕΝΑ ΜΕ - )" fullWidth value={formData.title} onChange={(e) => setFormData({... formData, title: e.target.value})}/>
-        <TextField name="id" variant="outlined" label="ΚΩΔΙΚΟΣ ΠΡΟΙΟΝΤΟΣ" fullWidth value={formData._id} onChange={(e) => setFormData({... formData, _id: e.target.value})}/>
+        <TextField name="title" variant="outlined" label="ΟΝΟΜΑ ΠΡΟΙΟΝΤΟΣ" fullWidth value={formData.title} onChange={(e) => setFormData({... formData, title: e.target.value})}/>
+        <TextField name="id" variant="outlined" label="ΚΩΔΙΚΟΣ ΠΡΟΙΟΝΤΟΣ (ΜΗ ΥΠΑΡΧΟΝ)" fullWidth value={formData._id} onChange={(e) => setFormData({... formData, _id: e.target.value})}/>
         <TextField name="quantity" variant="outlined" label="ΠΟΣΟΤΗΤΑ" fullWidth value={formData.quantity} onChange={(e) => setFormData({... formData, quantity: e.target.value})}/>
         <Button className={classes.buttonSubmit} variant="contained" color="default" size="large" type="submit" fullWidth>Submit</Button> 
       </form>

@@ -32,8 +32,9 @@ export const DeliveryForm = (props) => {
             _id: '',
             quantity: ''
           })
+          window.location.reload()
         } catch (error) {
-          Notification('Υπήρξε πράβλημα στην βάση δεδομένων')
+          alert('Υπήρξε πράβλημα στην βάση δεδομένων')
         }
     }
 

@@ -34,8 +34,9 @@ export const SynergeioForm = (props) => {
             quantity: '',
             code: ''
           })
+          window.location.reload()
         } catch (error) {
-          Notification('Υπήρξε πράβλημα στην βάση δεδομένων')
+        alert('Υπήρξε πράβλημα στην βάση δεδομένων')
         }
     }
 
