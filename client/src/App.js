@@ -18,7 +18,7 @@ import { getAll } from './actions/actions.js'
     const dispatch = useDispatch()
     const classes = useStyles()
     useEffect(() =>{
-        dispatch(getAll())
+        console.log(dispatch(getAll()));
     },[dispatch])
     const [showDel, setShowDel] = useState(false)
     const [showSyn, setShowSyn] = useState(false)
