@@ -1,5 +1,5 @@
 import { FETCH_ALL, CREATE, UPDATE, DELETE} from '../constants/actionTypes.js'
-export default (products = [], action) => {
+const reducers = (products = [], action) => {
     switch (action.type) {
         case FETCH_ALL:
            return action.payload
@@ -13,3 +13,4 @@ export default (products = [], action) => {
             return products;
     }
 }
+export default reducers

@@ -50,7 +50,26 @@ export default makeStyles((theme) => ({
         marginBottom: 10,
         marginLeft:5,
         marginRight:5
-      }
+      },
+    
+    a:{
+      fontWeight: 'bold',
+      fontSize: 20,
+      height: '56px',
+      textAlign: 'center',
+      display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+    },
+
+    b:{
+      width: 1232 / 3,
+      textAlign: 'center',
+      display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+
+    }
       
 }));
 
