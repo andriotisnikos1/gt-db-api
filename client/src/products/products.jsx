@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, CircularProgress, Container, Grow, Paper, Typography} from '@material-ui/core';
+import {Grid, Container, Grow, Paper} from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import useStyles from '../components/styles'
 const Products = () => {

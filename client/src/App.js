@@ -10,6 +10,7 @@ import { SynergeioForm } from './components/new-order.jsx'
 import { NewItem } from './components/new-product.jsx'
 import { getAll } from './actions/actions.js'
 import Products from './products/products.jsx'
+import { DeleteForm } from './components/delete-item.jsx'
 
 
 
@@ -23,6 +24,7 @@ import Products from './products/products.jsx'
     const [showDel, setShowDel] = useState(false)
     const [showSyn, setShowSyn] = useState(false)
     const [showNew, setShowNew] = useState(false)
+    const [showDele, setShowDele] = useState(false)
     return (
     <div>
             <AppBar className={classes.appbar}>
@@ -31,9 +33,9 @@ import Products from './products/products.jsx'
         <div>
               
              <Button variant="contained" color="primary" className={classes.tbBtnStyles} onClick={() => setShowDel(cs.newState(showDel))} disableElevation>ΝΕΑ ΠΑΡΑΛΑΒΗ</Button>
-             <Button variant="contained" color="secondary" className={classes.tbBtnStyles} onClick={() => setShowSyn(cs.newState(showSyn))} disableElevation>ΝΕΟ ΣΥΝΕΡΓΕΙΟ</Button>
              <Button variant="contained" color="secondary" className={classes.tbBtnStyles} onClick={() => setShowNew(cs.newState(showNew))} disableElevation>ΝΕΟ ΠΡΟΙΟΝ</Button>
-             <Button variant="outlined" className={classes.tbBtnStyles} disabled>Coming Soon</Button>
+             <Button variant="contained" color="secondary" className={classes.tbBtnStyles} onClick={() => setShowSyn(cs.newState(showSyn))} disableElevation>ΝΕΟ ΣΥΝΕΡΓΕΙΟ</Button>
+             <Button variant="contained" color="default" className={classes.tbBtnStyles} onClick={() => setShowDele(cs.newState(showDele))} disableElevation>ΔΙΑΓΡΑΦΗ ΠΡΟΙΟΝΤΟΣ</Button>
         </div>
         </Toolbar>
         </AppBar>
@@ -41,6 +43,7 @@ import Products from './products/products.jsx'
             <DeliveryForm show={showDel}/>
             <SynergeioForm show={showSyn}/>
             <NewItem show={showNew} />
+            <DeleteForm show={showDele}/>
             <div height="1px"/>
             <Container>
             <Products/>
