@@ -10,7 +10,7 @@ export default makeStyles((theme) => ({
 
     appbar: {
         height: 75,
-        backgroundColor: '#fff',
+        backgroundColor: '#fff !important',
     },
 
     tbBtnStyles:{
