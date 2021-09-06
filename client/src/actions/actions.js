@@ -14,7 +14,7 @@ export const getAll = () => async(dispatch) => {
     try {
       const { data } = await api.getAll();
         dispatch({type: cn.FETCH_ALL, payload: data})
-      return data
+      
     } catch (error) {
       console.log(error.message);
     }
