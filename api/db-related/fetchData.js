@@ -10,12 +10,16 @@ export const getData = app.get('/:_id', async(req, res) => {
     const id = Number(req.params._id)
     try {
             const products = await db.useDb('main').collection('products').findOne({_id: id})
-            res.send(products).status(200)
+            if (products) {
+                res.status(200).send(products)
+            }else {
+                res.status(404).send(`document with id of ${id} does not exist`)
+            }
         
 
     } catch (err) {
         console.log(err)
-        res.send(`document with id of ${id} does not exist`).status(404)
+        res.status(404).send(`document with id of ${id} does not exist`)
     }
 })
     
